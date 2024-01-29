@@ -1,7 +1,26 @@
 package token
 
-import "fmt"
+type TokenType string
 
-func Hello() {
-    fmt.Println("hello!")
+
+type Token struct {
+	Type   TokenType
+	Literal string
 }
+
+const (
+	ILLEGAL = "ILLEGAL"
+	EOF     = "EOF"
+	IDENT   = "IDENT"
+	INT     = "INT"
+	ASSIGN  = "="
+	PLUS    = "+"
+	COMMA   = ","
+	SEMICOLON = ";"
+	LPAREN  = "("
+	RPAREN  = ")"
+	LBRACE  = "{"
+	RBRACE  = "}"
+	FUNCTION = "FUNCTION"
+	LET     = "LET"	
+)

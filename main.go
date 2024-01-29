@@ -1,7 +1,8 @@
 package main
 
 import "monkey/token"
+import "monkey/lexer"
 
 func main() {
-    token.Hello()
+    lexer.TestNextToken()
 }

@@ -1,6 +1,7 @@
 package parser
 
 import (
+	"fmt"
 	"monkey/ast"
 	"monkey/lexer"
 	"testing"
@@ -37,15 +38,18 @@ let foobar = 838383;
 			return
 		}
 	}
+
 }
 
 func testLetStatement(t *testing.T, s ast.Statement, name string) bool {
 	if s.TokenLiteral() != "let" {
+		fmt.Printf("koko3.2")
 		t.Errorf("s.TokenLiteral not 'let'. got=%q", s.TokenLiteral())
 		return false
 	}
 
 	letStmt, ok := s.(*ast.LetStatement)
+
 	if !ok {
 		t.Errorf("s not *ast.LetStatement. got=%T", s)
 		return false

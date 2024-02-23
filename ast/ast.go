@@ -42,6 +42,11 @@ func (p *Program) TokenLiteral() string {
 	}
 }
 
+type IntegerLiteral struct {
+	Token token.Token
+	Value int64
+}
+
 type Identifier struct {
 	Token token.Token
 	Value string
@@ -120,4 +125,12 @@ func (es *ExpressionStatement) String() string {
 
 func (i *Identifier) String() string {
 	return i.Value
+}
+
+func (il *IntegerLiteral) expressionNode() {}
+func (il *IntegerLiteral) TokenLiteral() string {
+	return il.Token.Literal
+}
+func (il *IntegerLiteral) String() string {
+	return il.Token.Literal
 }

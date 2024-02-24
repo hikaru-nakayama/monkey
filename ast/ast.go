@@ -118,8 +118,6 @@ func (es *ExpressionStatement) String() string {
 	if es.Expression != nil {
 		out.WriteString(es.Expression.String())
 	}
-
-	out.WriteString(";")
 	return out.String()
 }
 
